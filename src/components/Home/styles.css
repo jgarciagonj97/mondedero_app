@@ -9,3 +9,27 @@ body{
     background: -webkit-linear-gradient(to right, #240b36, #c31432);  
     background: linear-gradient(to right, #240b36, #c31432);
 }
+
+.card{
+    width: 20%;
+    height: 35vh;
+    margin: 10% auto;
+}
+
+.titulo h3{
+    margin: 0 30%;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+.email{
+    margin: 2em 0;
+}
+
+.btn{
+    width: 50%;
+    margin: 2em auto;
+}
