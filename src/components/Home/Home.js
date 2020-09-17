@@ -9,6 +9,7 @@ const HomePage = () => {
         if (logeado) {
             history.push("/monedero");
         }
+        document.body.classList.remove("background");
         document.body.classList.add("background_home");
     });
 
@@ -35,7 +36,7 @@ const HomePage = () => {
                         value={email} onChange={(e) => { setEmail(e.target.value) }} />
                     <input type="password" placeholder="Password" className="form-control pass"
                         value={password} onChange={(e) => { setPassword(e.target.value) }} />
-                    <button type="submit" className="btn btn-primary">Entrar</button>
+                    <button type="submit" className="btn btn-primary envio">Entrar</button>
                 </form>
             </div>
         </div >
