@@ -9,6 +9,7 @@ const HomePage = () => {
         if (logeado) {
             history.push("/monedero");
         }
+        document.body.classList.add("background_home");
     });
 
     const [email, setEmail] = useState("");

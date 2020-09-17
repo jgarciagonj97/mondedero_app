@@ -9,6 +9,7 @@ const Logout = () => {
     const handleClick = () => {
         localStorage.removeItem('token');
         history.push("/");
+        document.body.classList.remove("background");
     }
 
     return (

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.css";
-import { useHistory, useState } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 
 // componentDidMount(){
@@ -12,6 +12,10 @@ import Navbar from "../Navbar/Navbar";
 
 const Monedero = () => {
 
+    useEffect(() => {
+        document.body.classList.add("background");
+    });
+
     const logeado = window.localStorage.getItem('token');
     const history = useHistory();
     if (!logeado) {
@@ -22,7 +26,7 @@ const Monedero = () => {
         <>
             <Navbar />
             <div className="monedero">
-
+                safa
             </div>
         </>
     );
