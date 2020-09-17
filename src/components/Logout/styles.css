@@ -1,0 +1,13 @@
+.btn{
+    margin: 1em 0;
+    width: 100%;
+}
+
+.logout{
+  text-decoration: none;
+  color: white;
+}
+
+.logout:hover{
+  color: white;
+}

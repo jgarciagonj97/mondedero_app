@@ -11,6 +11,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/monedero" component={Monedero} />
+        {/* Aquí voy a hacer el redirigir a Home si no tenemos token el localStorage (if(no hay objeto){Redirect to="/"} */}
         <Redirect from="**" to="/" />
       </Switch>
     </>

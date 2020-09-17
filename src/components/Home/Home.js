@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./styles.css";
 
 const HomePage = () => {
 
+    useEffect(() => {
+        const logeado = localStorage.getItem('token');
+        if (logeado) {
+            history.push("/monedero");
+        }
+    });
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const history = useHistory();
     function handleSubmit(e) {
         e.preventDefault();
         setEmail("");
         setPassword("");
+        localStorage.setItem("token", `${email}: ${password}`);
+        history.push("/monedero");
     };
 
     return (
-        <div className="card">
+        <div className="card shadow p-3 mb-5 bg-white rounded">
             <div className="card-body">
                 <div className="titulo">
                     <h3>LOG-IN</h3>

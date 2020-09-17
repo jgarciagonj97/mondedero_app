@@ -1,10 +1,22 @@
 import React from "react";
 import "./styles.css";
-// import { useHistory } from "react-router-dom";
+import { useHistory, useState } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 
+// componentDidMount(){
+//     const logeado = localStorage.getItem('token');
+//     if (!logeado) {
+//         useHistory().push("/");
+//     }
+// };
 
 const Monedero = () => {
+
+    const logeado = window.localStorage.getItem('token');
+    const history = useHistory();
+    if (!logeado) {
+        history.push("/");
+    }
 
     return (
         <>

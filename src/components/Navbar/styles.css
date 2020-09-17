@@ -17,20 +17,6 @@
   border-radius: 50%;
 }
 
-.container .btn{
-    margin: 0.5em 0;
-}
-
-.logout{
-  text-decoration: none;
-  color: white;
-}
-
-.logout:hover{
-  color: white;
-}
-
-
 @media (max-width: 800px) {
   .container {
     justify-content: center;

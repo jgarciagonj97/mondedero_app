@@ -16,8 +16,8 @@ body{
     margin: 10% auto;
 }
 
-.titulo h3{
-    margin: 0 30%;
+.card-body{
+    text-align: center;
 }
 
 .formulario{
