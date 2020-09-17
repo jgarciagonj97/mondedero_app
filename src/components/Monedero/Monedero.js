@@ -2,15 +2,11 @@ import React, { useEffect } from "react";
 import "./styles.css";
 import { useHistory } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import { connect, useSelector } from "react-redux";
+import { MANDAR_DINERO } from "../../redux/actions/actions";
 
-// componentDidMount(){
-//     const logeado = localStorage.getItem('token');
-//     if (!logeado) {
-//         useHistory().push("/");
-//     }
-// };
 
-const Monedero = () => {
+const Monedero = ({ disponible, enviado, enviarDinero }) => {
 
     useEffect(() => {
         document.body.classList.remove("background_home");
@@ -23,6 +19,12 @@ const Monedero = () => {
         history.push("/");
     }
 
+    var enviar = 0;
+    const handleChange = e => {
+        enviar = e.target.value;
+        console.log(enviar);
+    }
+
     return (
         <>
             <Navbar />
@@ -33,13 +35,13 @@ const Monedero = () => {
                             <h3>Saldo disponible: </h3>
                         </div>
                         <div>
-                            <h4>XXX</h4>
+                            <h4>{disponible}</h4>
                         </div>
-                        <form className="formulario">
-                            <input type="text" placeholder="Inserta importe a enviar..." className="form-control email"
-                            />
-                            <button type="submit" className="btn btn-success boton">Enviar</button>
-                        </form>
+                        <div className="formulario">
+                            <input type="number" placeholder="Inserta importe a enviar..." className="form-control email" name="dinero"
+                                onChange={e => handleChange(e)} />
+                            <button className="btn btn-success boton" onClick={() => enviarDinero(enviar)}>Enviar</button>
+                        </div>
                     </div>
                 </div >
             </div>
@@ -50,14 +52,27 @@ const Monedero = () => {
                             <h3>Saldo recibido: </h3>
                         </div>
                         <div className="saldo_total">
-                            <h4>XXX</h4>
+                            <h4>{enviado}</h4>
                         </div>
                     </div>
                 </div >
             </div>
         </>
     );
-}
+};
 
+const mapStateToProps = state => ({
+    disponible: state.disponible,
+    enviado: state.enviado
+});
 
-export default Monedero;
+const mapDispatchToProps = dispatch => ({
+    enviarDinero(cantidad) {
+        dispatch({
+            type: MANDAR_DINERO,
+            cantidad
+        })
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Monedero);
