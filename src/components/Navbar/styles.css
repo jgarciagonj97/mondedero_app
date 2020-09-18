@@ -7,7 +7,6 @@
   flex-direction: row;
   list-style-type: none;
   justify-content: space-between;
-  margin-right: 4rem;
 }
 
 .image{
@@ -17,9 +16,6 @@
   border-radius: 50%;
 }
 
-@media (max-width: 800px) {
-  .container {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+.contenedor{
+  border-bottom:black 1px solid;
 }

@@ -2,16 +2,24 @@
     background: white;
 }
 
-.monedero{
-    margin-top: -6%;
-}
-
-.movimientos{
-    margin-top: -6%;
-}
-
 .saldo_body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+@media (max-width: 539px){
+
+    .carta{
+        margin-left: 3vw;
+    }
+
+}
+
+@media (min-width:540px) and (max-width: 767px){
+
+    .carta{
+        margin-left: 2.5vw;
+    }
+
 }

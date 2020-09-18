@@ -33,3 +33,11 @@
     width: 50%;
     margin: 2em auto;
 }
+
+@media (max-width: 540px){
+
+    .card{
+        height: 53vh;
+    }
+
+}

@@ -5,6 +5,7 @@ import { useHistory, useState } from "react-router-dom";
 
 const Logout = () => {
 
+    //Función para deslogarte de la aplicación y redirigir a la Home
     const history = useHistory();
     const handleClick = () => {
         localStorage.removeItem('token');
